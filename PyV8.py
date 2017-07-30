@@ -782,7 +782,7 @@ class JSContext(_PyV8.JSContext):
     def __exit__(self, exc_type, exc_value, traceback):
         self.leave()
 
-        if hasattr(JSLocker, 'lock'):
+        if hasattr(self, 'lock'):
             self.lock.leave()
             self.lock = None
 
